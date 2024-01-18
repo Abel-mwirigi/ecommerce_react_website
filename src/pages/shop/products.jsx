@@ -5,7 +5,7 @@ export const Product = (props) => {
   const { id, productName, price, productImage } = props.data;
   const { addToCart, cartItems } = useContext(ShopContext);
 
-  const cartItemAmount = cartItems[id]
+  const cartItemAmount = cartItems[id];
   return (
     <div className="product">
       <img src={productImage} />
@@ -17,7 +17,9 @@ export const Product = (props) => {
           <b>${price}</b>
         </p>
       </div>
-      <button className="addToCartBttn" onClick={() => addToCart(id)}>Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}</button>
+      <button className="addToCartBttn" onClick={() => addToCart(id)}>
+        Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
+      </button>
     </div>
   );
 };
